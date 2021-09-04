@@ -73,6 +73,7 @@
     "style-loader": "^3.0.0"
   },
   "dependencies": {
+    "atem-connection": "^2.3.0",
     "electron-squirrel-startup": "^1.0.0"
   }
 }
