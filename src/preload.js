@@ -13,7 +13,6 @@ contextBridge.exposeInMainWorld(
         },
         receive: (channel, func) => {
             let validChannels = ["MIDIinput"];
-            ipcRenderer.on(channel, (event, ...args) => func(...args));
             console.log('recv');
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 

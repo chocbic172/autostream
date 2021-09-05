@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     var config_content = document.getElementById("config-content");
     var code = document.getElementById("code");
 
-    // Function to toggle is script is running
+    // Function to toggle if midi input is polling
     function toggle_running() {
         if (running) {
             status.innerHTML = "inactive";
@@ -56,11 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
             top_status.style = "color: rgb(221, 75, 75);"
             on_button.style = "border-color: rgb(137, 219, 105)";
             
-            window.api.send("enableMIDI", "");
-
-            window.api.receive("MIDIinput", (data) => {
-                console.log(`Received ${data} from main process`);
-            });
+            window.api.send("enableMIDI", false);
 
             running = false;
             
@@ -68,6 +64,8 @@ window.addEventListener('DOMContentLoaded', () => {
             status.innerHTML = "active";
             top_status.innerHTML = "active";
             on_button.innerHTML = "TURN OFF"
+
+            window.api.send("enableMIDI", true);
     
             status.style = "color: rgb(137, 219, 105)";
             top_status.style = "color: rgb(137, 219, 105)";
@@ -94,4 +92,9 @@ window.addEventListener('DOMContentLoaded', () => {
         main_content.style = "display: flex;"
         config_content.style = "display: none;"
     })
+
+    window.api.receive("MIDIinput", (data) => {
+        console.log(`Received ${data} from main process`);
+        code.innerHTML += `<br/>${data}`;
+    });
 });
