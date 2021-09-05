@@ -68,12 +68,14 @@
     "@electron-forge/plugin-webpack": "6.0.0-beta.60",
     "@vercel/webpack-asset-relocator-loader": "1.7.0",
     "css-loader": "^6.0.0",
-    "electron": "14.0.0",
+    "electron": "^14.0.0",
     "node-loader": "^2.0.0",
     "style-loader": "^3.0.0"
   },
   "dependencies": {
     "atem-connection": "^2.3.0",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "midi": "^2.0.0",
+    "trim-newlines": "^4.0.2"
   }
 }
