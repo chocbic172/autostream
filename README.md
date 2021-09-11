@@ -8,13 +8,13 @@ Basically a program to automatically control a Blackmagic ATEM Mini Pro from mid
 - Faithlife Proclaim (or any other midi controller)
 - Blackmagic Design ATEM device (any device will work but only tested with ATEM Mini Pro)
 
-## How to configure environment
+## How to configure LoopMIDI
 
-LoopMIDI must be configured as the first MIDI device (has device ID 1 on windows). I'll fix this eventually, and also remove LoopMIDI as a dependancy because I just found out that the midi library can make its own inputs like whaaaaaaat. I'll get round to it eventually.
+LoopMIDI must be set as the first MIDI device (has device ID 1 on windows). Also ensure that proclaim is outputting its lighting signals to this device. I'll fix this eventually, and also remove LoopMIDI as a dependancy because I just found out that the midi library can make its own inputs like whaaaaaaat. I'll get round to it eventually.
 
 ## Midi inputs
 
-When note "note" is played (), execute this action.\
+When note "Note" is played (0 being C2 and 127 being G8), execute this action.\
 You'll be able to configure this eventually but its hardcoded as this for now
 
 | Note | Action             | Description                                  |
