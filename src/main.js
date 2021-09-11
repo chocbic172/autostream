@@ -58,6 +58,7 @@ ipcMain.on("enableMIDI", (event, args) => {
   if (args) { midiin.openPort(0); }
   else { midiin.closePort(0); }
 
+  // Connect to ATEM here
 });
 
 
@@ -67,5 +68,12 @@ midiin.on('message', (_, message) => {
   // for debugging
   mainWindow.webContents.send("MIDIinput", message);
   console.log(`m: ${message}`);
+
+  // Main midi respone
+  // Outline:
+  // - Monitor midi inputs
+  // - Send relavent data to atem
+
+  // TODO: Learn atem module
 
 });
